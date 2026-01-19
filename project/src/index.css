@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.bg-animated-image {
+  background-image: url("/images/bg.jpg");
+  background-size: 130%;
+  background-position: 0% 50%;
+  animation: bgMove 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+    transform: scale(1);
+  }
+  100% {
+    background-position: 100% 50%;
+    transform: scale(1.05);
+  }
+}
