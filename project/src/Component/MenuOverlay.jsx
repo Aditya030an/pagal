@@ -136,11 +136,18 @@
 
 
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
+import { supabase } from "../lib/supabase";
+import {
+  FaUserShield,
+  FaSignOutAlt,
+} from "react-icons/fa";
 
 const MenuOverlay = ({ close }) => {
   const [show, setShow] = useState(false);
+  const [user , setUser] = useState(null);
+   const navigate = useNavigate();
 
   useEffect(() => {
     setShow(true);
@@ -150,6 +157,27 @@ const MenuOverlay = ({ close }) => {
     setShow(false);
     setTimeout(close, 500);
   };
+
+   useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => {
+      setUser(data.user);
+    });
+
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setUser(session?.user ?? null);
+      },
+    );
+
+    return () => listener.subscription.unsubscribe();
+  }, []);
+
+    const handleLogout = async () => {
+    await supabase.auth.signOut();
+    navigate("/");
+    close;
+  };
+
 
   return (
     <div
@@ -212,6 +240,19 @@ const MenuOverlay = ({ close }) => {
               </li>
             ))}
           </ul>
+
+           {!user ? (
+            <Link to="/login" onClick={close} className="p-2 border rounded-full">
+              <FaUserShield />
+            </Link>
+          ) : (
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 text-red-600"
+            >
+              <FaSignOutAlt /> Logout
+            </button>
+          )}
 
           {/* Footer */}
           <div className="mt-10 text-xs tracking-wide text-slate-500 space-y-2">
