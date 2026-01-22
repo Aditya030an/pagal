@@ -48,7 +48,7 @@ export default function BlogDetails() {
       <section className="py-20 text-center">
         <p className="text-lg text-gray-600">{errorMsg}</p>
         <Link
-          to="/blogs"
+          to="/blog"
           className="text-blue-600 font-medium hover:underline mt-4 inline-block"
         >
           ← Back to Blogs
@@ -61,7 +61,7 @@ export default function BlogDetails() {
     <section className="py-20 px-6 max-w-3xl mx-auto font-[lato]">
       {/* Back */}
       <Link
-        to="/blogs"
+        to="/blog"
         className="text-sm text-gray-500 hover:text-blue-600 transition"
       >
         ← Back to Blogs
