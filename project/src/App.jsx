@@ -86,6 +86,14 @@ function App() {
     });
   }, []);
 
+   // ✅ SCROLL FIX
+  useEffect(() => {
+    if (!loading) {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    }
+  }, [loading]);
+
   return (
     <Router>
       {loading && <PageLoader />}
@@ -93,7 +101,6 @@ function App() {
       {!loading && (
         <>
           <Navbar />
-          <div className="h-32" />
 
           <Routes>
             <Route path="/" element={<Home />} />

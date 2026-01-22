@@ -238,18 +238,17 @@
 
 
 
-export default function FooterPegol() {
+import React from "react";
+
+export default function FooterPegal() {
   return (
     <footer className="relative bg-white overflow-hidden">
-
-      {/* Soft grid texture (very subtle on white) */}
+      {/* Soft grid texture */}
       <div
         className="absolute inset-0 opacity-[0.08] pointer-events-none"
         style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(0,48,96,0.04) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0,48,96,0.04) 1px, transparent 1px)
-          `,
+          backgroundImage:
+            "linear-gradient(to right, rgba(0,48,96,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,48,96,0.04) 1px, transparent 1px)",
           backgroundSize: "96px 96px",
         }}
       />
@@ -280,65 +279,61 @@ export default function FooterPegol() {
           </a>
         </div>
 
-        {/* Info grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-16 mb-14">
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-14 mb-14">
 
           {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-medium text-[#003060]">Pegol</h3>
-            <p className="text-[#055C9D] leading-relaxed max-w-sm text-sm sm:text-base">
+          <div>
+            <h3 className="text-xl font-medium text-[#003060] mb-4">
+              Pegal
+            </h3>
+            <p className="text-[#055C9D] text-sm sm:text-base max-w-sm">
               A digital agency crafting thoughtful, high-performing digital
               experiences through strategy, design, and engineering.
             </p>
           </div>
 
           {/* Navigation */}
-          <div className="space-y-4">
-            <p className="text-xs uppercase tracking-widest text-[#0E86D4]">
+          <div>
+            <p className="text-xs uppercase tracking-widest text-[#0E86D4] mb-4">
               Navigation
             </p>
-            <ul className="space-y-3 text-[#055C9D] text-base">
-              {["Home", "About", "Work", "Contact"].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`/${item.toLowerCase()}`}
-                    className="group relative inline-block"
-                  >
-                    {item}
-                    <span className="absolute left-0 -bottom-1 h-[1.5px] w-0 bg-[#0E86D4] transition-all duration-300 group-hover:w-full" />
-                  </a>
-                </li>
-              ))}
+            <ul className="space-y-3 text-[#055C9D]">
+              <li><a href="/">Home</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/portfolio">Portfolio</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* Social */}
+          <div>
+            <p className="text-xs uppercase tracking-widest text-[#0E86D4] mb-4">
+              Social
+            </p>
+            <ul className="space-y-3 text-[#055C9D]">
+              <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+              <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+
             </ul>
           </div>
 
           {/* Contact */}
-          <div className="space-y-4">
-            <p className="text-xs uppercase tracking-widest text-[#0E86D4]">
+          <div>
+            <p className="text-xs uppercase tracking-widest text-[#0E86D4] mb-4">
               Contact
             </p>
-            <div className="space-y-2 text-[#055C9D] text-base">
-              <p>pegalagency@gmail.com</p>
-              <p>India · Working worldwide</p>
-            </div>
+            <p className="text-[#055C9D]">pegalagency@gmail.com</p>
+            <p className="text-[#055C9D]">India · Working worldwide</p>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[rgba(0,48,96,0.12)] pt-6">
-
-          <p className="text-xs sm:text-sm text-[#055C9D]">
-            © {new Date().getFullYear()} Pegol. All rights reserved.
-          </p>
-
-          <div className="flex gap-6 text-xs sm:text-sm text-[#055C9D]">
-            <span className="hover:text-[#003060] cursor-pointer transition">
-              Privacy
-            </span>
-            <span className="hover:text-[#003060] cursor-pointer transition">
-              Terms
-            </span>
-          </div>
+        {/* Bottom */}
+        <div className="border-t border-[rgba(0,48,96,0.12)] pt-6 flex justify-between text-sm text-[#055C9D]">
+          <span>© {new Date().getFullYear()} Pegal. All rights reserved.</span>
+          <span>Privacy · Terms</span>
         </div>
 
       </div>

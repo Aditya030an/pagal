@@ -86,13 +86,13 @@ const WhatWeDo = () => {
                   {item.desc}
                 </p>
 
-                <div className="mt-6 inline-flex items-center gap-2 text-[#0E86D4] font-medium cursor-pointer">
+                {/* <div className="mt-6 inline-flex items-center gap-2 text-[#0E86D4] font-medium cursor-pointer">
                   Learn more
                   <ArrowRight
                     className="group-hover:translate-x-1 transition"
                     size={16}
                   />
-                </div>
+                </div> */}
               </div>
             );
           })}

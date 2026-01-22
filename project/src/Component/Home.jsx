@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import WhatWeDo from "./WhatWeDo"
@@ -18,15 +11,15 @@ const Hero = () => {
     <>
       {/* HERO SECTION */}
 
-{/* 
-      <section className="relative min-h-screen overflow-hidden bg-[#f4f9fc]"> */}
-      <section className="relative min-h-screen  overflow-hidden bg-[#f4f9fc]">
+
+      
+      <section className="relative min-h-screen  overflow-hidden bg-[#f4f9fc] ">
 
 
 
 
 <span className="sr-only">
-    Pegol is a digital agency specializing in web design, web development,
+    Pegal is a digital agency specializing in web design, web development,
     branding, UI UX design, and performance-driven websites for modern brands.
   </span>
 
@@ -129,18 +122,8 @@ const Hero = () => {
     }}
   />
 
-  {/* Animated grid */}
-  <div
-    className="absolute inset-0 opacity-[0.22]"
-    style={{
-      backgroundImage: `
-        linear-gradient(to right, rgba(0,48,96,0.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0,48,96,0.06) 1px, transparent 1px)
-      `,
-      backgroundSize: "96px 96px",
-      animation: "gridDrift 80s linear infinite",
-    }}
-  />
+
+ 
 
   {/* Editorial rail */}
 
@@ -184,7 +167,7 @@ We help purpose-driven brands design and develop high-performance websites by co
 
     {/* SEO-only reinforcement (invisible to users) */}
     <p className="sr-only">
-      Pegol is a digital agency in India offering web design, React development,
+      Pegal is a digital agency in India offering web design, React development,
       UI UX design, branding, frontend development, SEO-friendly websites,
       and performance optimization for startups and growing businesses worldwide.
     </p>
@@ -207,16 +190,3 @@ We help purpose-driven brands design and develop high-performance websites by co
 };
 
 export default Hero;
-
-
-
-
-
-
-
-
-
-
-
-
-
